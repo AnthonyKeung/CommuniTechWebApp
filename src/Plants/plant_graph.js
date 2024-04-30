@@ -1,4 +1,3 @@
-import './PlantHealth.css';
 import Paper from '@material-ui/core/Paper';
 import {
     Chart,
@@ -8,8 +7,7 @@ import {
 
 import {useState, useEffect} from 'react';
 
-
-const plantTemperature = () => {
+const plantGraph = () => {
     const [Number, setNumber] = useState(null);
     const [graphData, setGraphData] = useState([
         {argument: 'Temperature', value: null},
@@ -52,4 +50,4 @@ const plantTemperature = () => {
 }
 
 
-export default plantTemperature;
+export default plantGraph;

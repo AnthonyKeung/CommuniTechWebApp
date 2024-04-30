@@ -1,10 +1,10 @@
 import './App.css';
-import PlantTemperature from "./PlantHealth";
+import PlantHealth from "./Plants/PlantHealth";
 
 function App() {
   return (
     <div className="App">
-      <PlantTemperature/>
+      <PlantHealth/>
     </div>
   );
 }
