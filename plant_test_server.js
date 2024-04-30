@@ -10,8 +10,9 @@ wss.on('connection', function connection(ws) {
     //This simulates sending data every 2 seconds
     setInterval(() => {
         const data = {
-            x: Math.random() * 100,
-            y: Math.random() * 100
+            Temperature: Math.random() * 30,
+            Humidity: Math.random() * 100,
+            light: Math.random()* 10
         };
         ws.send(JSON.stringify(data));
         console.log ('Sent data:', data);
