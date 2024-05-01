@@ -7,13 +7,13 @@ import {
 
 import {useState, useEffect} from 'react';
 
-const plantGraph = () => {
+const PlantGraph = ({plantInfo}) => {
     const [Number, setNumber] = useState(null);
     const [graphData, setGraphData] = useState([
-        {argument: 'Temperature', value: null},
+        {argument: {plantInfo}, value: null},
         {argument: 'White', value: 100 - Number},
     ]);
-    useEffect(() => {
+    useEffect((plantInfo) => {
         const ws = new WebSocket('ws://localhost:8000/');
         ws.onopen = function open() {
             console.log('WebSocket connection opened!');
@@ -25,7 +25,7 @@ const plantGraph = () => {
             setNumber(newNumber);
 
             const updatedGraphData = [
-                {argument: 'Temperature', value: newNumber},
+                {argument: {plantInfo}, value: newNumber},
                 {argument: 'White', value: 100 - newNumber}
             ];
             setGraphData(updatedGraphData)
@@ -42,12 +42,12 @@ const plantGraph = () => {
                 <PieSeries
                     valueField="value"
                     argumentField="argument"
-                    innerRadius={0.6}/>
-                <Title text="Plant Humidity"/>
+                    innerRadius={0.5}/>
+                <Title text={"Plant " + plantInfo} />
             </Chart>
         </Paper>
     );
 }
 
 
-export default plantGraph;
+export default PlantGraph;

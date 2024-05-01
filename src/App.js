@@ -3,7 +3,7 @@ import PlantHealth from "./Plants/PlantHealth";
 
 function App() {
   return (
-    <div className="App">
+    <div className="plant">
       <PlantHealth/>
     </div>
   );

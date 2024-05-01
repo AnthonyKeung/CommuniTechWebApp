@@ -2,3 +2,9 @@ body
 {
   background-color: #3D4E17;
 }
+
+.container {
+   display: flex; /* Make the children elements flexbox items */
+  flex-direction: row; /* Arrange them side-by-side */
+  justify-content: space-between; /* Optionally distribute space between items */
+}
