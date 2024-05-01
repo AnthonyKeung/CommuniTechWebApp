@@ -44,7 +44,7 @@ const PlantGraph = ({plantInfo}) => {
                 <PieSeries
                     valueField="value"
                     argumentField="argument"
-                    innerRadius={0.5}/>
+                    innerRadius={0.4}/>
                 <Title text={"Plant " + plantInfo} />
             </Chart>
         </Paper>

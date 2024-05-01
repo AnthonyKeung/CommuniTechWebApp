@@ -6,6 +6,16 @@ body
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 50%; /* Set height to 25% for the bottom quarter */
+  height: 50%;
+  width: 50%;
+  border: 1px solid black;
+}
+
+.mood{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50%;
   width: 100%; /* Span the full width */
+  border: 1px solid black;
 }
