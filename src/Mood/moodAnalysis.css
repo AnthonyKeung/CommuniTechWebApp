@@ -1,1 +1,12 @@
-.title{ top: 0;}
+.title {
+    top: 0;
+}
+
+.videofeed-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%; /* Span the full width */
+    border: 1px solid black;
+}

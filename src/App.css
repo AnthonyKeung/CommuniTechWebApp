@@ -12,9 +12,8 @@ body
 }
 
 .mood{
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
   height: 50%;
   width: 100%; /* Span the full width */
   border: 1px solid black;

@@ -1,0 +1,10 @@
+.emojiContainer {
+    display:flex;
+    width: 10%;
+}
+
+.emojiContainer img{
+    width: 100%; /* Make image fit container width */
+    height: 100%; /* Make image fit container height */
+    flex-direction: row;
+}
