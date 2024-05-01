@@ -4,7 +4,11 @@ body
 }
 
 .container {
-   display: flex; /* Make the children elements flexbox items */
-  flex-direction: row; /* Arrange them side-by-side */
-  justify-content: space-between; /* Optionally distribute space between items */
+    position: fixed; /* Fix the container to the screen */
+    display: flex; /* Enable flexbox layout */
+    flex-direction: row; /* Arrange components side-by-side */
+}
+
+plantTitle{
+    top: 0;
 }

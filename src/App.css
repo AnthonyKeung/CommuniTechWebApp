@@ -2,8 +2,10 @@ body
 {
   background-color: #3D4E17;
 }
-.plant {
+.plant{
   position: fixed;
   bottom: 0;
   left: 0;
+  height: 50%; /* Set height to 25% for the bottom quarter */
+  width: 100%; /* Span the full width */
 }

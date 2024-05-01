@@ -1,4 +1,5 @@
 import Paper from '@material-ui/core/Paper';
+import "./Plant_graph.css"
 import {
     Chart,
     PieSeries,
@@ -38,6 +39,7 @@ const PlantGraph = ({plantInfo}) => {
         <Paper>
             <Chart
                 data={graphData}
+                className="background"
             >
                 <PieSeries
                     valueField="value"
