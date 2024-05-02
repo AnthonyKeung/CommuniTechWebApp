@@ -3,12 +3,21 @@ body
   background-color: #3D4E17;
 }
 
-.container {
-    position: fixed; /* Fix the container to the screen */
-    display: flex; /* Enable flexbox layout */
-    flex-direction: row; /* Arrange components side-by-side */
+.graphs-container {
+    display: flex;
+    height: 25%;
+    width: 100%;
+    border: 2px solid red;
+    gap: 5%
 }
 
-plantTitle{
-    top: 0;
+.graph-container{
+    width: 30%
+}
+
+. PlantGraph {
+    display: flex;
+    width: 100%; /* Make image fit container width */
+    height: 100%; /* Make image fit container height */
+    flex-direction: row;
 }
