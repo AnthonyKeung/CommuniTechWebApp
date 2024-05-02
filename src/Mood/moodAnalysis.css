@@ -2,6 +2,13 @@
     top: 0;
 }
 
+.mood-container {
+    border: 1px solid black;
+    height: 100%;
+    width: 50%; /* Span the full width */
+    border: 1px solid black;
+}
+
 .videofeed-container {
     position: absolute;
     top: 0;
