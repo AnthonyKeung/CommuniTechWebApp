@@ -12,7 +12,8 @@ wss.on('connection', function connection(ws) {
         const data = {
             Temperature: Math.random() * 30,
             Humidity: Math.random() * 100,
-            light: Math.random()* 10
+            light: Math.random()* 10,
+            Happiness: Math.floor(Math.random()*4)
         };
         ws.send(JSON.stringify(data));
         console.log ('Sent data:', data);

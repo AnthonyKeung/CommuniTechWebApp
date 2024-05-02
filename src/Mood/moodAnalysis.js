@@ -1,13 +1,13 @@
 import "./moodAnalysis.css";
-import faceEmoji from "./faceEmoji";
+import FaceEmoji from "./faceEmoji";
 import camera from "./camera"
 
-function moodAnalysis() {
+function MoodAnalysis() {
     return (
         <div className="mood-container">
             <div>
                 <h1 className="title" style={{color: '#C7A003'}}>Mood Analysis</h1>
-                {faceEmoji()}
+                {FaceEmoji()}
             </div>
             <div className="videofeed-container">
                 {camera()}
@@ -17,4 +17,4 @@ function moodAnalysis() {
     );
 }
 
-export default moodAnalysis;
+export default MoodAnalysis;

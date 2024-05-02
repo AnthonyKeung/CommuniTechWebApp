@@ -1,6 +1,6 @@
 import './App.css';
 import PlantHealth from "./Plants/PlantHealth";
-import moodAnalysis from "./Mood/moodAnalysis";
+import MoodAnalysis from "./Mood/moodAnalysis";
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
                 <PlantHealth/>
             </div>
             <div className="mood">
-                {moodAnalysis()}
+                {MoodAnalysis()}
             </div>
         </div>
     );
