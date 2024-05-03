@@ -1,10 +1,6 @@
-import Paper from '@material-ui/core/Paper';
 import "./Plant_graph.css"
-import {
-    Chart,
-    PieSeries,
-    Title
-} from '@devexpress/dx-react-chart-material-ui'
+import {PieChart, Pie, Tooltip} from "recharts";
+
 
 import {useState, useEffect} from 'react';
 
@@ -27,29 +23,32 @@ const PlantGraph = ({plantInfo}) => {
 
             const updatedGraphData = [
                 {argument: {plantInfo}, value: newNumber},
-                {argument: 'White', value: 100 - newNumber}
+                {argument: 'White', value: 100 - newNumber, fill: 'white'}
             ];
             setGraphData(updatedGraphData)
         };
         ws.onerror = function error(error) {
             console.error('WebSocket error:', error);
         };
-    },[]);
+    }, []);
     return (
-        <Paper>
-            <Chart
-                data={graphData}
-                className="background"
-            >
-                <PieSeries
-                    valueField="value"
-                    argumentField="argument"
-                    innerRadius={0.4}/>
-                <Title text={"Plant " + plantInfo} />
-            </Chart>
-        </Paper>
+        <div style={{ backgroundColor: '#EDE599' }}>
+            <h2>{plantInfo}</h2>
+            <PieChart width={1000} height={400}>
+                <Pie
+                    dataKey="value"
+                    data={graphData}
+                    cx={100}
+                    cy={100}
+                    innerRadius={60}
+                    outerRadius={100}
+                    fill="red"
+                    animationDuration={500}
+                />
+                <Tooltip/>
+            </PieChart>
+        </div>
+
     );
 }
-
-
 export default PlantGraph;

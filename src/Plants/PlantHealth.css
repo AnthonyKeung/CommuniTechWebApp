@@ -7,7 +7,6 @@ body
     display: flex;
     height: 25%;
     width: 100%;
-    border: 2px solid red;
     gap: 5%
 }
 
