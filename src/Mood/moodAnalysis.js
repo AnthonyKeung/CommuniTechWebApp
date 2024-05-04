@@ -1,6 +1,7 @@
 import "./moodAnalysis.css";
 import FaceEmoji from "./faceEmoji";
 import camera from "./camera"
+import MoodGraph from "./moodGraph";
 
 function MoodAnalysis() {
     return (
@@ -12,7 +13,7 @@ function MoodAnalysis() {
                 {FaceEmoji()}
             </div>
             <div className="mood-graph-container">
-                <h1>smiley graph</h1>
+                {MoodGraph()}
             </div>
             <div className="videofeed-container">
                 {camera()}

@@ -6,7 +6,7 @@
     border: 1px solid black;
     height: 100%;
     width: 50%; /* Span the full width */
-    border: 1px solid cyan;
+    border: 1px solid black;
 }
 
 .videofeed-container {
@@ -21,12 +21,9 @@
 .emoji-container{
     top: 0;
     left: 0;
-    border: 1px solid black;
-
 }
 .mood-graph-container {
     top: 0;
     left: 0;
-    border: 1px solid red;
     height: 55%;
 }
