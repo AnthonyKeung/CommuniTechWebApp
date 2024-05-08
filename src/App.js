@@ -6,7 +6,7 @@ function App() {
     return (
         <div>
             <div className="plant">
-                <PlantHealth/>
+                {/*<PlantHealth/>*/}
             </div>
             <div className="mood">
                 {MoodAnalysis()}

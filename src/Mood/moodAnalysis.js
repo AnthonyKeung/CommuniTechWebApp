@@ -13,7 +13,7 @@ function MoodAnalysis() {
                 {FaceEmoji()}
             </div>
             <div className="mood-graph-container">
-                {MoodGraph()}
+                {/*{MoodGraph()}*/}
             </div>
             <div className="videofeed-container">
                 {camera()}

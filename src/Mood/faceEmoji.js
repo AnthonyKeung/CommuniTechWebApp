@@ -5,36 +5,44 @@ function FaceEmoji() {
     const [sadBackground, setSadBackground] = useState('transparent');
     const [neutralBackground, setNeutralBackground] = useState('transparent');
     const [HappyBackground, setHappyBackground] = useState('transparent');
+    const current_emotion_URL = process.env.REACT_APP_MY_DEV_MOOD_URL + '/current_emotion'
+    console.log("the url is " + current_emotion_URL);
 
     useEffect(() => {
-        const ws = new WebSocket('ws://localhost:8000/');
-        ws.onopen = function open() {
-            console.log('WebSocket connection opened!');
-        };
-        ws.onmessage = function incoming(message) {
-            const data = JSON.parse(message.data)
-            const mood = data["Happiness"];
-            if (mood === 0) {
-                setSadBackground('transparent')
-                setNeutralBackground('transparent')
-                setHappyBackground('transparent')
-            } else if (mood === 1) {
-                setSadBackground('#EDE599')
-                setNeutralBackground('transparent')
-                setHappyBackground('transparent')
-            } else if (mood === 2) {
-                setSadBackground('transparent')
-                setNeutralBackground('#EDE599')
-                setHappyBackground('transparent')
-            } else if (mood === 3) {
-                setSadBackground('transparent')
-                setNeutralBackground('transparent')
-                setHappyBackground('#EDE599')
-            }
-        };
-        ws.onerror = function error(error) {
-            console.error('WebSocket error:', error);
-        };
+        setInterval(() => {
+            fetch(current_emotion_URL, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // const data = JSON.parse(message.data)
+                    const mood = data.emotion;
+                    console.log(mood)
+                    if (mood === "Null") {
+                        setSadBackground('transparent')
+                        setNeutralBackground('transparent')
+                        setHappyBackground('transparent')
+                    } else if (mood === "Sad") {
+                        setSadBackground('#EDE599')
+                        setNeutralBackground('transparent')
+                        setHappyBackground('transparent')
+                    } else if (mood === "Neutral") {
+                        setSadBackground('transparent')
+                        setNeutralBackground('#EDE599')
+                        setHappyBackground('transparent')
+                    } else if (mood === "Happy") {
+                        setSadBackground('transparent')
+                        setNeutralBackground('transparent')
+                        setHappyBackground('#EDE599')
+                    }
+                })
+                .catch(console.error)
+        }, 1000);
+        // ws.onerror = function error(error) {
+        //     console.error('WebSocket error:', error);
+        // };
     }, []);
     return (
         <div className="emojiContainer">
