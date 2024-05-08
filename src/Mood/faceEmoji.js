@@ -6,7 +6,6 @@ function FaceEmoji() {
     const [neutralBackground, setNeutralBackground] = useState('transparent');
     const [HappyBackground, setHappyBackground] = useState('transparent');
     const current_emotion_URL = process.env.REACT_APP_MY_DEV_MOOD_URL + '/current_emotion'
-    console.log("the url is " + current_emotion_URL);
 
     useEffect(() => {
         setInterval(() => {
@@ -39,11 +38,8 @@ function FaceEmoji() {
                     }
                 })
                 .catch(console.error)
-        }, 1000);
-        // ws.onerror = function error(error) {
-        //     console.error('WebSocket error:', error);
-        // };
-    }, []);
+        }, 2000);
+    },);
     return (
         <div className="emojiContainer">
             <div>

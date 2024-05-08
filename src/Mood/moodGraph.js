@@ -5,24 +5,42 @@ import {useState, useEffect} from 'react';
 
 const MoodGraph = () => {
     const [graphData, setGraphData] = useState([]);
+
     useEffect((graphData) => {
-        const ws = new WebSocket('ws://localhost:8000/');
-        ws.onopen = function open() {
-            console.log('WebSocket connection opened!');
-        };
-        const newDataPoints = []
-        ws.onmessage = function incoming(message) {
-            const data = JSON.parse(message.data)
-            const newDataPoint = {
-                time: data["Date"],
-                mood: data["Happiness"]
-            }
-            newDataPoints.push(newDataPoint)
-            setGraphData(newDataPoints);
-        };
-        ws.onerror = function error(error) {
-            console.error('WebSocket error:', error);
-        };
+        let mood = 0;
+        const current_emotion_URL = process.env.REACT_APP_MY_DEV_MOOD_URL + '/current_emotion'
+        const newDataPoints = [];
+        setInterval(() => {
+            fetch(current_emotion_URL, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data["emotion"] === "Sad"){
+                        mood = 0;
+                    }
+                    else if (data["emotion"] === "Neutral"){
+                        mood = 1;
+                    }
+                    else if (data["emotion"] === "Happy"){
+                        mood = 2;
+                    }
+                    else {
+                        mood = 3;
+                    }
+
+                    const newDataPoint = {
+                        time: data.date,
+                        mood: mood
+                    };
+                    newDataPoints.push(newDataPoint)
+                    console.log(newDataPoints)
+                    setGraphData(newDataPoints);
+                })
+                .catch(console.error)
+        }, 2000);
     }, []);
     return (
     <LineChart
