@@ -4,7 +4,7 @@ import "./PlantHealth.css";
 const PlantHealth = () => {
     return (
         <div>
-            <h1 className="plantTitle" style={{color: '#C7A003'}}>Plant Health</h1>
+            <h1 className="plantTitle" style={{color: 'yellow'}}>Plant Health</h1>
             <div className="graphs-container">
                 <div className = 'graph-container'>
                     <PlantGraph plantInfo="Temperature"/>

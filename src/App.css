@@ -2,6 +2,12 @@ body
 {
   background-color: #3D4E17;
 }
+
+.cursor{
+  border: 5px solid red;
+  position: relative;
+}
+
 .plant{
   position: fixed;
   bottom: 0;

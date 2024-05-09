@@ -18,7 +18,6 @@ function FaceEmoji() {
                 .then(data => {
                     // const data = JSON.parse(message.data)
                     const mood = data.emotion;
-                    console.log(mood)
                     if (mood === "Null") {
                         setSadBackground('transparent')
                         setNeutralBackground('transparent')

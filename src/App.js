@@ -1,12 +1,14 @@
 import './App.css';
+import Cursor from "./Gesture/Cursor";
 import PlantHealth from "./Plants/PlantHealth";
 import MoodAnalysis from "./Mood/moodAnalysis";
 
 function App() {
     return (
-        <div>
+        <div style={{width: '100%', height: '100%'}}>
+            <Cursor/>
             <div className="plant">
-                {/*<PlantHealth/>*/}
+                <PlantHealth/>
             </div>
             <div className="mood">
                 {MoodAnalysis()}

@@ -46,10 +46,6 @@ const MoodGraph = () => {
                         {
                             Emotion: "Happy",
                             amt: happyCounter
-                        },
-                        {
-                            Emotion: "Other",
-                            amt : otherCounter
                         }
                     ];
                     setGraphData(newGraphData);
