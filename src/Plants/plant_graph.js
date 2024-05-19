@@ -1,38 +1,39 @@
 import "./Plant_graph.css"
-import {PieChart, Pie, Tooltip} from "recharts";
+import {Pie, PieChart, Tooltip} from "recharts";
 
 
-import {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 const PlantGraph = ({plantInfo}) => {
-    const [Number, setNumber] = useState(null);
+
     const [graphData, setGraphData] = useState([
         {argument: {plantInfo}, value: null},
-        {argument: 'White', value: 100 - Number},
+        {argument: 'White', value: null},
     ]);
-    useEffect((plantInfo) => {
+
+
+    useEffect(() => {
         const ws = new WebSocket('ws://localhost:8000/');
         ws.onopen = function open() {
             console.log('WebSocket connection opened!');
         };
-
         ws.onmessage = function incoming(message) {
-            const data = JSON.parse(message.data)
-            const newNumber = data["Temperature"];
-            setNumber(newNumber);
-
+            const data = JSON.parse(message.data);
             const updatedGraphData = [
-                {argument: {plantInfo}, value: newNumber},
-                {argument: 'White', value: 100 - newNumber, fill: 'white'}
+                {argument: {plantInfo}, value: data[plantInfo]},
+                {argument: 'White', value: 100 - data[plantInfo], fill: 'white'}
             ];
             setGraphData(updatedGraphData)
         };
         ws.onerror = function error(error) {
             console.error('WebSocket error:', error);
         };
-    }, []);
+        return () => {
+            ws.close();
+        }
+    }, [plantInfo]);
     return (
-        <div style={{ backgroundColor: '#EDE599' }}>
+        <div style={{backgroundColor: '#EDE599'}}>
             <h2>{plantInfo}</h2>
             <PieChart width={1000} height={400}>
                 <Pie

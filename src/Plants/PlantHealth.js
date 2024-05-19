@@ -1,10 +1,12 @@
 import PlantGraph from "./plant_graph"
 import "./PlantHealth.css";
+import {Button} from "@mui/material";
 
 const PlantHealth = () => {
     return (
         <div>
-            <h1 className="plantTitle" style={{color: 'yellow'}}>Plant Health</h1>
+            <h1 className="plantTitle" style={{color: '#C7A003'}}>Plant Health</h1>
+            <Button variant="contained">Water Plant </Button>
             <div className="graphs-container">
                 <div className = 'graph-container'>
                     <PlantGraph plantInfo="Temperature"/>

@@ -11,7 +11,7 @@ function App() {
                 <PlantHealth/>
             </div>
             <div className="mood">
-                {MoodAnalysis()}
+                <MoodAnalysis/>
             </div>
         </div>
     );
