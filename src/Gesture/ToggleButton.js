@@ -1,31 +1,32 @@
-import * as React from 'react';
-import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
-import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
-import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
-import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
+import {useState} from 'react';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-export default function ToggleButtons() {
-  const [alignment, setAlignment] = React.useState('left');
+export default function ToggleButtons({onControlMethodChange}) {
+    const [controlMethod, setControlMethod] = useState('gesture');
 
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
+    const handleControlMethod = (event, newControlMethod) => {
+        if (newControlMethod !== null) {
+            setControlMethod(newControlMethod);
+            onControlMethodChange(newControlMethod)
+        }
+    };
 
-  return (
-    <ToggleButtonGroup
-      value={alignment}
-      exclusive
-      onChange={handleAlignment}
-      aria-label="text alignment"
-    >
-      <ToggleButton value="left" aria-label="left aligned">
-        <h1>Gesture</h1>
-      </ToggleButton>
-      <ToggleButton value="right" aria-label="right aligned">
-        <h1>Wall Touch</h1>
-      </ToggleButton>
-    </ToggleButtonGroup>
-  );
+    return (
+        <ToggleButtonGroup
+            value={controlMethod}
+            exclusive
+            onChange={handleControlMethod}
+            style={{
+                backgroundColor: '#EDE599', // Set background color
+            }}
+        >
+            <ToggleButton value="gesture">
+                <h1>Gesture</h1>
+            </ToggleButton>
+            <ToggleButton value="wallTouch">
+                <h1>Wall Touch</h1>
+            </ToggleButton>
+        </ToggleButtonGroup>
+    );
 }

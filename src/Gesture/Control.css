@@ -1,15 +1,13 @@
-.Gesture-videofeed-container{
+.control--method-container{
     position: absolute;
     top: 10%;
     left: 0;
     height: 90%;
     width: 50%;
-    border: 1px solid aquamarine;
 }
 
 .Toggle-Container{
     position: absolute;
     top: 50%;
-    right: 0;
-    border: 1px solid aquamarine;
+    right: 10%;
 }
