@@ -16,6 +16,7 @@ function MoodAnalysis() {
                 {MoodGraph()}
             </div>
             <div className="videofeed-container">
+                <h1 className="title" style={{ color: '#C7A003' }}>Live Streaming</h1>
                 {camera()}
             </div>
         </div>

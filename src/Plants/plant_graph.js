@@ -1,17 +1,13 @@
 import "./Plant_graph.css"
 import {Pie, PieChart, Tooltip} from "recharts";
 
-
 import {useEffect, useState} from 'react';
 
 const PlantGraph = ({plantInfo}) => {
-
     const [graphData, setGraphData] = useState([
         {argument: {plantInfo}, value: null},
         {argument: 'White', value: null},
     ]);
-
-
     useEffect(() => {
         const ws = new WebSocket('ws://localhost:8000/');
         ws.onopen = function open() {
@@ -31,7 +27,7 @@ const PlantGraph = ({plantInfo}) => {
         return () => {
             ws.close();
         }
-    }, [plantInfo]);
+    },[]);
     return (
         <div style={{backgroundColor: '#EDE599'}}>
             <h2>{plantInfo}</h2>

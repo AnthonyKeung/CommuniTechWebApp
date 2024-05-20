@@ -5,7 +5,7 @@ function FaceEmoji() {
     const [sadBackground, setSadBackground] = useState('transparent');
     const [neutralBackground, setNeutralBackground] = useState('transparent');
     const [HappyBackground, setHappyBackground] = useState('transparent');
-    const current_emotion_URL = process.env.REACT_APP_MY_DEV_MOOD_URL + '/current_emotion'
+    const current_emotion_URL = process.env.REACT_APP_MY_DEV_MOOD_URL + '/current_emotion';
 
     useEffect(() => {
         setInterval(() => {
@@ -16,7 +16,6 @@ function FaceEmoji() {
             })
                 .then(response => response.json())
                 .then(data => {
-                    // const data = JSON.parse(message.data)
                     const mood = data.emotion;
                     if (mood === "Null") {
                         setSadBackground('transparent')
@@ -37,7 +36,7 @@ function FaceEmoji() {
                     }
                 })
                 .catch(console.error)
-        }, 2000);
+        }, 500);
     },);
     return (
         <div className="emojiContainer">

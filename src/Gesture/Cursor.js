@@ -34,7 +34,6 @@ function Cursor() {
             }
 
         };
-
         window.addEventListener('keydown', handleKeyDown);
 
         return () => window.removeEventListener('keydown', handleKeyDown);

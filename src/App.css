@@ -24,3 +24,12 @@ body
   width: 100%; /* Span the full width */
   border: 1px solid black;
 }
+
+.control{
+  position: fixed;
+  bottom: 0;
+  right:0;
+  height: 50%;
+  width: 50%; /* Span the full width */
+  border: 1px solid red;
+}

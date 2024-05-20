@@ -2,6 +2,7 @@ import './App.css';
 import Cursor from "./Gesture/Cursor";
 import PlantHealth from "./Plants/PlantHealth";
 import MoodAnalysis from "./Mood/moodAnalysis";
+import Control from "./Gesture/Control"
 
 function App() {
     return (
@@ -12,6 +13,9 @@ function App() {
             </div>
             <div className="mood">
                 <MoodAnalysis/>
+            </div>
+            <div className="control">
+                <Control/>
             </div>
         </div>
     );
