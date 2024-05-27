@@ -14,7 +14,6 @@ body
   left: 0;
   height: 50%;
   width: 50%;
-  border: 1px solid black;
 }
 
 .mood{
@@ -22,7 +21,6 @@ body
   top: 0;
   height: 50%;
   width: 100%; /* Span the full width */
-  border: 1px solid black;
 }
 
 .control{
@@ -31,5 +29,4 @@ body
   right:0;
   height: 50%;
   width: 50%; /* Span the full width */
-  border: 1px solid red;
 }

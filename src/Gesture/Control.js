@@ -16,13 +16,15 @@ function Control() {
             </div>
             <div className="control--method-container">
                 {selectedControlMethod === 'gesture'
-                    &&
-                    <div>
+                    && <div>
                         <h2 className="title" style={{color: '#C7A003'}}> Gesture Feed</h2>
                         {camera()}
                     </div>}
                 {selectedControlMethod === 'wallTouch'
-                    && <h2 className="title" style={{color: '#C7A003'}}>Wall Touch </h2>
+                    && <div>
+                        <h2 className="title" style={{color: '#C7A003'}}>Wall Touch </h2>
+                        <img src={require("./static/Arrows.png")} alt="sad" className="arrow"/>
+                    </div>
                 }
             </div>
             <div className="Toggle-Container">

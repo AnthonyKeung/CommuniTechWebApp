@@ -32,7 +32,6 @@ function Cursor() {
                 setCursorX(newX);
                 setCursorY(newY);
             }
-
         };
         window.addEventListener('keydown', handleKeyDown);
 

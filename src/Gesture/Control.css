@@ -9,5 +9,10 @@
 .Toggle-Container{
     position: absolute;
     top: 50%;
-    right: 10%;
+    right: 0%;
+}
+
+.arrow{
+    height: 50%;
+    width: 50%;
 }
