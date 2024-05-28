@@ -4,6 +4,7 @@ import camera from "./camera"
 import MoodGraph from "./moodGraph";
 
 function MoodAnalysis() {
+    const mood_URL = process.env.REACT_APP_MY_DEV_MOOD_URL + '/video_feed';
     return (
         <div className="mood-container">
             <div>
@@ -17,7 +18,7 @@ function MoodAnalysis() {
             </div>
             <div className="videofeed-container">
                 <h1 className="title" style={{ color: '#C7A003' }}>Live Streaming</h1>
-                {camera()}
+                {camera(mood_URL)}
             </div>
         </div>
     );

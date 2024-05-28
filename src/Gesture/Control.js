@@ -5,6 +5,7 @@ import ToggleButtons from "./ToggleButton"
 
 
 function Control() {
+    const control_URL = process.env.REACT_APP_GESTURE + '/video_feed';
     const [selectedControlMethod, setSelectedControlMethod] = useState("gesture");
     const handleControlMethodChange = (newControlMethod) => {
         setSelectedControlMethod(newControlMethod);
@@ -18,7 +19,7 @@ function Control() {
                 {selectedControlMethod === 'gesture'
                     && <div>
                         <h2 className="title" style={{color: '#C7A003'}}> Gesture Feed</h2>
-                        {camera()}
+                        {camera(control_URL)}
                     </div>}
                 {selectedControlMethod === 'wallTouch'
                     && <div>

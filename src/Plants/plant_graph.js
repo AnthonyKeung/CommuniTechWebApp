@@ -3,13 +3,14 @@ import {Pie, PieChart, Tooltip} from "recharts";
 
 import {useEffect, useState} from 'react';
 
+
 const PlantGraph = ({plantInfo}) => {
     const [graphData, setGraphData] = useState([
         {argument: {plantInfo}, value: null},
         {argument: 'White', value: null},
     ]);
     useEffect(() => {
-        const ws = new WebSocket('ws://localhost:8000/');
+        const ws = new WebSocket('ws://home-assistant:8123/api/websockets/states/sensor.plant_sensor_1_temperature');
         ws.onopen = function open() {
             console.log('WebSocket connection opened!');
         };

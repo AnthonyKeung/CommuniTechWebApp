@@ -1,7 +1,6 @@
 import "./camera.css"
 
-function camera() {
-    const video_URL = process.env.REACT_APP_MY_DEV_MOOD_URL + '/video_feed'
+function camera(video_URL) {
     return (
         <div className="container">
             <div className="row">
