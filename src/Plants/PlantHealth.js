@@ -5,7 +5,7 @@ import {Button} from "@mui/material";
 const PlantHealth = () => {
     return (
         <div>
-            <h1 className="plantTitle" style={{color: '#C7A003'}}>Plant Health</h1>
+            <h1 className="plantTitle" style={{color: "black"}}>Plant Health</h1>
             <Button variant="contained">Water Plant </Button>
             <div className="graphs-container">
                 <div className = 'graph-container'>

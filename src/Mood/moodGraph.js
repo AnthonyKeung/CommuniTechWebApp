@@ -47,7 +47,7 @@ const MoodGraph = () => {
                     setGraphData(newGraphData);
                 })
                 .catch(console.error)
-        }, 1000);
+        }, 500);
     }, []);
     return (
         <ResponsiveContainer width="100%" height="100%">
@@ -67,7 +67,7 @@ const MoodGraph = () => {
                 <YAxis/>
                 <Tooltip/>
                 <Legend/>
-                <Bar dataKey="amt" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue"/>}/>
+                <Bar dataKey="amt" fill="#7ED348" activeBar={<Rectangle fill="pink" stroke="blue"/>}/>
             </BarChart>
         </ResponsiveContainer>
     );

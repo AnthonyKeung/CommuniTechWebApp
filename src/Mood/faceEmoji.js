@@ -22,17 +22,17 @@ function FaceEmoji() {
                         setNeutralBackground('transparent')
                         setHappyBackground('transparent')
                     } else if (mood === "Sad") {
-                        setSadBackground('#EDE599')
+                        setSadBackground('#7ED348')
                         setNeutralBackground('transparent')
                         setHappyBackground('transparent')
                     } else if (mood === "Neutral") {
                         setSadBackground('transparent')
-                        setNeutralBackground('#EDE599')
+                        setNeutralBackground('#7ED348')
                         setHappyBackground('transparent')
                     } else if (mood === "Happy") {
                         setSadBackground('transparent')
                         setNeutralBackground('transparent')
-                        setHappyBackground('#EDE599')
+                        setHappyBackground('#7ED348')
                     }
                 })
                 .catch(console.error)

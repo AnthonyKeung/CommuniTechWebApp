@@ -18,7 +18,7 @@ export default function ToggleButtons({onControlMethodChange}) {
             exclusive
             onChange={handleControlMethod}
             style={{
-                backgroundColor: '#EDE599', // Set background color
+                backgroundColor: '#7ED348', // Set background color
             }}
         >
             <ToggleButton value="gesture">

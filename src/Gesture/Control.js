@@ -13,18 +13,18 @@ function Control() {
     return (
         <div>
             <div>
-                <h1 className="plantTitle" style={{color: '#C7A003'}}>Navigation</h1>
+                <h1 className="plantTitle" style={{color: "black"}}>Navigation</h1>
             </div>
             <div className="control--method-container">
                 {selectedControlMethod === 'gesture'
                     && <div>
-                        <h2 className="title" style={{color: '#C7A003'}}> Gesture Feed</h2>
+                        <h2 className="title" style={{color: "black"}}> Gesture Feed</h2>
                         {camera(control_URL)}
                     </div>}
                 {selectedControlMethod === 'wallTouch'
                     && <div>
-                        <h2 className="title" style={{color: '#C7A003'}}>Wall Touch </h2>
-                        <img src={require("./static/Arrows.png")} alt="sad" className="arrow"/>
+                        <h2 className="title" style={{color: "black"}}>Wall Touch </h2>
+                        <img src={require("./static/Arrows.png")} alt="Arrow Controls" className="arrow"/>
                     </div>
                 }
             </div>

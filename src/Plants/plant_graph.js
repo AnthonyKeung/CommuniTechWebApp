@@ -10,7 +10,7 @@ const PlantGraph = ({plantInfo}) => {
         {argument: 'White', value: null},
     ]);
     useEffect(() => {
-        const ws = new WebSocket('ws://port:8000');
+        const ws = new WebSocket('ws://localhost:8000/');
         ws.onopen = function open() {
             console.log('WebSocket connection opened!');
         };
@@ -40,7 +40,7 @@ const PlantGraph = ({plantInfo}) => {
                     cy={100}
                     innerRadius={60}
                     outerRadius={100}
-                    fill="red"
+                    fill="#97E7F5"
                     animationDuration={500}
                 />
                 <Tooltip/>
