@@ -7,7 +7,7 @@ import Control from "./Gesture/Control"
 function App() {
     return (
         <div style={{width: '100%', height: '100%'}}>
-            {/*<Cursor/>*/}
+            <Cursor/>
             <div className="plant">
                 <PlantHealth/>
             </div>

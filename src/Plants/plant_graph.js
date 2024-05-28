@@ -10,7 +10,7 @@ const PlantGraph = ({plantInfo}) => {
         {argument: 'White', value: null},
     ]);
     useEffect(() => {
-        const ws = new WebSocket('ws://home-assistant:8123/api/websockets/states/sensor.plant_sensor_1_temperature');
+        const ws = new WebSocket('ws://port:8000');
         ws.onopen = function open() {
             console.log('WebSocket connection opened!');
         };
@@ -30,7 +30,7 @@ const PlantGraph = ({plantInfo}) => {
         }
     },[]);
     return (
-        <div style={{backgroundColor: '#EDE599'}}>
+        <div style={{backgroundColor: '#7ED348'}}>
             <h2>{plantInfo}</h2>
             <PieChart width={1000} height={400}>
                 <Pie

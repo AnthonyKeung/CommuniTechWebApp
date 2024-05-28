@@ -36,7 +36,7 @@ function FaceEmoji() {
                     }
                 })
                 .catch(console.error)
-        }, 500);
+        }, 1000);
     },);
     return (
         <div className="emojiContainer">

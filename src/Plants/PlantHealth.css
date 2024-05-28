@@ -1,13 +1,13 @@
 body
 {
-  background-color: #3D4E17;
+  background-color: #7ED348;
 }
 
 .graphs-container {
     display: flex;
     height: 25%;
     width: 100%;
-    gap: 5%
+    gap: 5%;
 }
 
 .graph-container{
